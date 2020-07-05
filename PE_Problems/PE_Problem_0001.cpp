@@ -19,13 +19,13 @@ Email        : rifat.cse4.bu@gmail.com, armalhasib@gmail.com
 /*
 Online Judge    : Project Euler
 Problem No      : 1
-Problem Name    : 
-Solving Method  : 
+Problem Name    :
+Solving Method  :
 
 */
 
 /*
-Problem Statement : 
+Problem Statement :
 Problem 1
 =========
    If we list all the natural numbers below 10 that are multiples of 3 or 5,
@@ -34,13 +34,35 @@ Problem 1
 */
 
 
+
 #include<bits/stdc++.h>
 using namespace std;
 typedef long long ll;
 
+ll lcm(ll a, ll b)
+{
+    return (a/__gcd(a,b))*b;
+}
+
+ll sumDivBy(ll k,ll n)
+{
+    ll sum;
+    ll num=n/k;
+    sum=k*((num*(num+1))/2);
+    return sum;
+}
+
 int main()
 {
-
+    ll mx=999;
+    ll num1=3;
+    ll num2=5;
+    ll numLcm=lcm(num1, num2);
+    ll div1=sumDivBy(num1,mx);
+    ll div2=sumDivBy(num2,mx);
+    ll divLcm=sumDivBy(numLcm,mx);
+    ll ans=div1+div2-divLcm;
+    cout<<ans<<"\n";
     return 0;
 }
 /***********Alhamdulillah***********/
